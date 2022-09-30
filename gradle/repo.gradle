@@ -1,0 +1,10 @@
+ext.repoUrl = [
+        central        : "http://nexus.konasldev.com:8082/repository/maven-central/",
+        gradlePlugins  : "http://nexus.konasldev.com:8082/repository/gradle-plugins/",
+        springSnapshot : "http://nexus.konasldev.com:8082/repository/repository.springframework.maven.snapshot/",
+        springMilestone: "http://nexus.konasldev.com:8082/repository/spring-milestone/",
+        thirdparty     : "http://nexus.konasldev.com:8082/repository/thirdparty",
+        jcenter        : "http://nexus.konasldev.com:8082/repository/jcenter-bintray/",
+        konadev        : "http://nexus.konadev.com/content/repositories/thirdparty",
+        stateMachineCore: "http://nexus.konasldev.com:8082/repository/maven-spring-statemachine-core/"
+]

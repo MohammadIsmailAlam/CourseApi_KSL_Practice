@@ -1,0 +1,60 @@
+
+plugins {
+    id 'org.springframework.boot' version '2.5.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.konasl.lms'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+    //implementation.exclude module: 'tomcat-jdbc'
+    //implementation.exclude module: 'spring-boot-starter-tomcat'
+    //implementation.exclude module: 'amqp-client'
+}
+
+apply from: 'gradle/repo.gradle'
+
+repositories {
+    mavenLocal()
+    maven {
+        url repoUrl.central
+        allowInsecureProtocol = true
+    }
+    maven {
+        url repoUrl.gradlePlugins
+        allowInsecureProtocol = true
+    }
+    maven {
+        url repoUrl.springSnapshot
+        allowInsecureProtocol = true
+    }
+    maven {
+        url repoUrl.springMilestone
+        allowInsecureProtocol = true
+    }
+    maven {
+        url repoUrl.thirdparty
+        allowInsecureProtocol = true
+    }
+    maven {
+        url repoUrl.konadev
+        allowInsecureProtocol = true
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    compileOnly 'javax.validation:validation-api'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'com.h2database:h2'
+
+}

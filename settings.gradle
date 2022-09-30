@@ -1,0 +1,31 @@
+pluginManagement {
+   apply from: 'gradle/repo.gradle'
+    repositories {
+        mavenLocal()
+        maven {
+            url repoUrl.central
+            allowInsecureProtocol = true
+        }
+        maven {
+            url repoUrl.gradlePlugins
+            allowInsecureProtocol = true
+        }
+        maven {
+            url repoUrl.springSnapshot
+            allowInsecureProtocol = true
+        }
+        maven {
+            url repoUrl.springMilestone
+            allowInsecureProtocol = true
+        }
+        maven {
+            url repoUrl.thirdparty
+            allowInsecureProtocol = true
+        }
+        maven {
+            url repoUrl.konadev
+            allowInsecureProtocol = true
+        }
+    }
+}
+rootProject.name = 'practice'
